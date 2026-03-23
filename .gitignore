@@ -1,0 +1,11 @@
+# Internal working files
+font-mockups.html
+asset-gallery.html
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+*.swp

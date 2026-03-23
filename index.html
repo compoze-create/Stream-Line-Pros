@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Streamline Pros | Your Trusted QuickBooks Professionals</title>
+  <meta name="description" content="Streamline Pros provides expert bookkeeping, QuickBooks Online setup, payroll, and financial consulting for small businesses. Based in Michigan, serving clients nationwide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1B2D42;
+      background: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Brand Tokens ──────────────────────────────────────────── */
+    :root {
+      --navy:     #1B2D42;
+      --navy-mid: #25405E;
+      --steel:    #3C607F;
+      --accent:   #2E7A8E;
+      --gold:     #B89050;
+      --light:    #F5F4F1;
+      --mid-gray: #E2E5EC;
+      --text:     #1B2D42;
+      --muted:    #5A6572;
+      --white:    #ffffff;
+      --radius:   12px;
+      --shadow:   0 4px 24px rgba(27,45,66,0.10);
+      --shadow-lg:0 12px 48px rgba(27,45,66,0.16);
+    }
+
+    /* ─── Typography ────────────────────────────────────────────── */
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; line-height: 1.2; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+    h2 { font-size: clamp(1.75rem, 3.5vw, 2.6rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+    p  { font-size: 1rem; color: var(--muted); }
+
+    /* ─── Utilities ─────────────────────────────────────────────── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 96px 0; }
+    .section-pad-sm { padding: 64px 0; }
+    .text-center { text-align: center; }
+    .section-label {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title { color: var(--navy); margin-bottom: 16px; }
+    .section-sub { font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+    /* ─── Buttons ───────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 8px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.92rem;
+      cursor: pointer; border: none; transition: all 0.25s ease;
+      white-space: nowrap; letter-spacing: 0.01em;
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--white);
+    }
+    .btn-primary:hover { background: #256a7a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,122,142,0.30); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.10); border-color: var(--white); }
+    .btn-navy {
+      background: var(--navy); color: var(--white);
+    }
+    .btn-navy:hover { background: var(--navy-mid); transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    /* ─── Header / Nav ──────────────────────────────────────────── */
+    #site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--navy);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.20);
+      transition: background 0.3s;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    /* Logo */
+    .logo { display: flex; align-items: center; font-family: 'Plus Jakarta Sans', sans-serif; text-decoration: none; }
+    .logo-wordmark {
+      font-size: 1.26rem; font-weight: 800;
+      color: var(--white); letter-spacing: -0.02em;
+      font-style: normal;
+    }
+    .logo-accent { color: var(--gold); font-style: normal; }
+
+    /* Desktop nav */
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      padding: 8px 14px; border-radius: 6px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.78);
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-cta { margin-left: 12px; }
+
+    /* Mobile nav toggle */
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .nav-toggle span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white); border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: absolute; top: 72px; left: 0; right: 0;
+      background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 24px 24px; z-index: 99;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block; padding: 12px 0;
+      color: rgba(255,255,255,0.82); font-size: 1rem; font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+
+    /* Top bar */
+    .top-bar {
+      background: var(--steel); padding: 8px 0;
+      font-size: 0.78rem; color: rgba(255,255,255,0.82);
+      text-align: center; letter-spacing: 0.04em;
+    }
+    .top-bar a { color: var(--white); font-weight: 600; }
+    .top-bar .social-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      margin: 0 8px;
+    }
+
+    /* ─── Hero ──────────────────────────────────────────────────── */
+    #hero {
+      position: relative; overflow: hidden;
+      min-height: 88vh;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, var(--navy) 0%, #0f1f30 60%, #152030 100%);
+    }
+    .hero-bg-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        radial-gradient(circle at 70% 50%, rgba(60,96,127,0.35) 0%, transparent 60%),
+        radial-gradient(circle at 20% 80%, rgba(46,122,142,0.15) 0%, transparent 40%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0; pointer-events: none; opacity: 0.035;
+      background-image:
+        linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+      padding: 80px 0;
+    }
+    .hero-text { animation: fadeUp 0.8s ease both; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(184,144,80,0.12); border: 1px solid rgba(184,144,80,0.35);
+      border-radius: 100px; padding: 6px 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 700; color: var(--gold);
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero-badge svg { opacity: 0.85; }
+    .hero-title { color: var(--white); margin-bottom: 8px; font-weight: 800; }
+    .hero-title em {
+      font-style: normal; color: var(--gold);
+    }
+    .hero-sub-title {
+      font-family: 'Inter', sans-serif; font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.60); margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 1.02rem; color: rgba(255,255,255,0.68);
+      max-width: 480px; margin-bottom: 36px; line-height: 1.78;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-phone {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,0.60); font-size: 0.88rem;
+      margin-top: 24px;
+    }
+    .hero-phone svg { opacity: 0.7; flex-shrink: 0; }
+    .hero-phone a { color: var(--white); font-weight: 600; }
+
+    /* Hero credential cards */
+    .hero-cards {
+      display: flex; flex-direction: column; gap: 16px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      backdrop-filter: blur(12px);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .hero-card:hover { transform: translateX(6px); border-color: rgba(184,144,80,0.35); }
+    .hero-card-icon {
+      width: 40px; height: 40px;
+      background: rgba(46,122,142,0.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 10px; color: var(--gold);
+    }
+    .hero-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.92rem;
+      font-weight: 600; color: var(--white); margin-bottom: 4px;
+    }
+    .hero-card p { font-size: 0.80rem; color: rgba(255,255,255,0.52); }
+
+    /* ─── Trust Bar ─────────────────────────────────────────────── */
+    #trust-bar {
+      background: var(--white); border-top: 1px solid var(--mid-gray);
+      border-bottom: 1px solid var(--mid-gray);
+      padding: 28px 0;
+    }
+    .trust-bar-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap;
+    }
+    .trust-divider { color: var(--mid-gray); font-size: 1.2rem; }
+    .trust-badge {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 20px;
+      background: var(--light); border: 1px solid var(--mid-gray);
+      border-radius: 8px;
+    }
+    .trust-badge-icon {
+      width: 34px; height: 34px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .trust-badge-icon.intuit { background: rgba(44,160,28,0.10); color: #2ca01c; }
+    .trust-badge-icon.gusto  { background: rgba(244,93,72,0.10);  color: #d44a36; }
+    .trust-badge-icon.elite  { background: rgba(26,110,181,0.10); color: #1a6eb5; }
+    .trust-badge-icon.star   { background: rgba(184,144,80,0.12); color: var(--gold); }
+    .trust-badge-text { line-height: 1.2; }
+    .trust-badge-text strong { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--navy); }
+    .trust-badge-text span   { font-size: 0.70rem; color: var(--muted); }
+
+    /* ─── About Teaser ──────────────────────────────────────────── */
+    #about-teaser {
+      background: var(--white);
+    }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-placeholder {
+      width: 100%; aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--steel) 100%);
+      border-radius: 16px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; color: rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-lg);
+    }
+    .about-img-placeholder::after {
+      content: 'Photo';
+      position: absolute; bottom: 20px; left: 20px;
+      font-family: 'Inter', sans-serif; font-size: 0.72rem;
+      color: rgba(255,255,255,0.25); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .since-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--accent); color: var(--white);
+      border-radius: 50%; width: 100px; height: 100px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: var(--shadow);
+    }
+    .since-badge span:first-child { font-size: 0.60rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.75; }
+    .since-badge span:last-child  { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.4rem; font-weight: 800; }
+    .about-content .section-sub { margin: 0 0 28px; text-align: left; font-size: 1rem; line-height: 1.8; }
+    .about-pillars {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 32px;
+    }
+    .pillar {
+      padding: 16px; background: var(--light);
+      border-radius: var(--radius);
+      border-left: 3px solid var(--gold);
+    }
+    .pillar h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem;
+      font-weight: 700; color: var(--navy); margin-bottom: 4px;
+    }
+    .pillar p { font-size: 0.82rem; }
+
+    /* ─── Services ──────────────────────────────────────────────── */
+    #services-teaser { background: var(--light); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 48px;
+    }
+    .service-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 32px 28px; box-shadow: var(--shadow);
+      border: 1px solid var(--mid-gray);
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--accent));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(27,45,66,0.15); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px; color: var(--gold);
+      box-shadow: 0 4px 12px rgba(27,45,66,0.18);
+    }
+    .service-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.02rem;
+      font-weight: 700; color: var(--navy); margin-bottom: 10px;
+    }
+    .service-card p { font-size: 0.87rem; line-height: 1.68; }
+    .service-card .learn-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px; font-size: 0.83rem; font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--accent); transition: gap 0.2s;
+    }
+    .service-card .learn-link:hover { gap: 10px; }
+    .services-cta { text-align: center; margin-top: 40px; }
+
+    /* ─── Stats ─────────────────────────────────────────────────── */
+    #stats {
+      background: var(--navy);
+      position: relative; overflow: hidden;
+    }
+    #stats::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(60,96,127,0.45) 0%, transparent 70%);
+    }
+    .stats-header { text-align: center; margin-bottom: 56px; position: relative; z-index: 1; }
+    .stats-header .section-title { color: var(--white); }
+    .stats-header .section-sub { color: rgba(255,255,255,0.60); }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; position: relative; z-index: 1;
+    }
+    .stat-item {
+      text-align: center; padding: 40px 24px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800; color: var(--gold);
+      line-height: 1; margin-bottom: 12px;
+      display: block;
+    }
+    .stat-label { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+
+    /* ─── Industries ────────────────────────────────────────────── */
+    #industries { background: var(--white); }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px; margin-top: 48px;
+    }
+    .industry-tile {
+      position: relative; overflow: hidden;
+      border-radius: var(--radius); aspect-ratio: 1;
+      cursor: default;
+      background: var(--light); border: 1px solid var(--mid-gray);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .industry-tile:hover { transform: scale(1.03); box-shadow: var(--shadow-lg); }
+    .industry-tile .tile-icon {
+      color: var(--navy-mid); transition: transform 0.3s;
+    }
+    .industry-tile:hover .tile-icon { transform: scale(1.12); }
+    .industry-tile h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem;
+      font-weight: 600; color: var(--navy); text-align: center;
+      line-height: 1.3; padding: 0 12px;
+    }
+    .industry-tile .tile-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .industry-tile:hover .tile-overlay { opacity: 1; }
+    .industry-tile .tile-overlay span {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.85rem;
+      font-weight: 600; color: var(--white); text-align: center;
+      padding: 16px;
+    }
+
+    /* ─── Testimonials ──────────────────────────────────────────── */
+    #testimonials-preview { background: var(--light); }
+    .testimonials-carousel {
+      position: relative; margin-top: 48px; overflow: hidden;
+    }
+    .testimonials-track {
+      display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .testimonial-slide {
+      min-width: 100%; padding: 0 8px;
+    }
+    .testimonial-card {
+      background: var(--white); border-radius: 16px;
+      padding: 48px 52px; box-shadow: var(--shadow);
+      max-width: 860px; margin: 0 auto;
+      position: relative; border: 1px solid var(--mid-gray);
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute; top: 20px; left: 36px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 6rem; font-weight: 800; color: var(--mid-gray);
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 1.02rem; color: var(--text);
+      line-height: 1.82; margin-bottom: 24px;
+      position: relative; z-index: 1;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 14px; }
+    .author-avatar {
+      width: 46px; height: 46px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--steel));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700; color: var(--white); font-size: 0.92rem;
+      flex-shrink: 0;
+    }
+    .author-info strong { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--navy); }
+    .author-info span   { font-size: 0.80rem; color: var(--muted); }
+    .stars { color: var(--gold); font-size: 0.88rem; margin-bottom: 4px; }
+    .carousel-controls {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-top: 32px;
+    }
+    .carousel-btn {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1.5px solid var(--mid-gray); background: var(--white);
+      cursor: pointer; font-size: 1rem; color: var(--navy);
+      transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+    }
+    .carousel-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .carousel-dots { display: flex; gap: 8px; }
+    .carousel-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--mid-gray); border: none; cursor: pointer; transition: all 0.2s;
+    }
+    .carousel-dot.active { background: var(--navy); transform: scale(1.35); }
+    .testimonials-cta { text-align: center; margin-top: 32px; }
+
+    /* ─── CTA Banner ────────────────────────────────────────────── */
+    #cta-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d1a28 100%);
+      position: relative; overflow: hidden; text-align: center;
+    }
+    #cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(60,96,127,0.40) 0%, transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-inner h2 { color: var(--white); margin-bottom: 16px; }
+    .cta-inner p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cta-quote {
+      margin-top: 48px; padding: 28px 36px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius); max-width: 680px; margin-left: auto; margin-right: auto;
+    }
+    .cta-quote blockquote {
+      font-style: italic; font-size: 1rem;
+      color: rgba(255,255,255,0.70); margin-bottom: 10px;
+    }
+    .cta-quote cite { font-size: 0.80rem; color: var(--gold); font-style: normal; font-weight: 600; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ─── Client Logos ──────────────────────────────────────────── */
+    #clients { background: var(--white); padding: 48px 0; }
+    .clients-label {
+      text-align: center; font-size: 0.72rem; font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .clients-list {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; align-items: center;
+    }
+    .client-pill {
+      padding: 7px 16px; border: 1px solid var(--mid-gray);
+      border-radius: 100px; font-size: 0.80rem; font-weight: 500;
+      color: var(--muted); background: var(--light);
+      transition: all 0.2s;
+    }
+    .client-pill:hover { border-color: var(--navy); color: var(--navy); background: var(--white); }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    #footer {
+      background: #0e1c2a;
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand p { font-size: 0.86rem; color: rgba(255,255,255,0.45); margin-top: 16px; max-width: 280px; line-height: 1.75; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn {
+      width: 34px; height: 34px; border-radius: 7px;
+      background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.60);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.08);
+    }
+    .social-btn:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+    .footer-col h5 {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 0.86rem; color: rgba(255,255,255,0.58); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 0.86rem; color: rgba(255,255,255,0.58); line-height: 1.85; }
+    .footer-contact a { color: var(--gold); font-weight: 500; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.76rem; color: rgba(255,255,255,0.30); }
+    .footer-badges { display: flex; gap: 8px; }
+    .footer-badge {
+      padding: 4px 10px; border-radius: 4px;
+      background: rgba(255,255,255,0.05); font-size: 0.68rem;
+      color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.08);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* ─── Scroll Reveal ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ─── Animations ────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; gap: 40px; }
+      .hero-cards { flex-direction: row; flex-wrap: wrap; }
+      .hero-card { flex: 1; min-width: 200px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-wrap { max-width: 500px; margin: 0 auto; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      #site-header { position: relative; }
+      .mobile-menu { position: relative; top: 0; }
+      .hero-content { padding: 48px 0; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .stat-item:last-child { border-bottom: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonial-card { padding: 28px 24px; }
+      .about-pillars { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ──────────────────────────────────────────────────── -->
+<div class="top-bar">
+  Bookkeeping Solutions &nbsp;|&nbsp;
+  <a href="tel:6162925254">(616) 292-5254</a>
+  &nbsp;|&nbsp;
+  <a class="social-link" href="https://www.linkedin.com/company/streamline-pros" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="social-link" href="https://www.facebook.com/streamlinepros" target="_blank" rel="noopener">Facebook</a>
+</div>
+
+<!-- ── Header ───────────────────────────────────────────────────── -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Streamline Pros Home">
+        <span class="logo-wordmark">Streamline <em class="logo-accent">Pros</em></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+
+      <!-- Mobile toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:6162925254">(616) 292-5254</a>
+    <a href="contact.html" class="btn btn-primary">Get Started</a>
+  </div>
+</header>
+
+<!-- ── Hero ─────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Trusted Since 1999
+        </div>
+        <h1 class="hero-title">Reduce Your<br><em>"Head Rent."</em></h1>
+        <p class="hero-sub-title">Your Trusted QuickBooks Professionals</p>
+        <p class="hero-desc">
+          Working harder eventually stops working. By leveraging the
+          QuickBooks Online ecosystem, we immediately remove the pain
+          points of keeping accurate books — so you can get back to
+          doing what you love.
+        </p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+          <a href="services.html" class="btn btn-outline">Explore Services</a>
+        </div>
+        <p class="hero-phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Call us: <a href="tel:6162925254">(616) 292-5254</a>
+        </p>
+      </div>
+
+      <div class="hero-cards">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </div>
+          <h4>Intuit ProAdvisor Elite</h4>
+          <p>Top-tier QuickBooks certification with advanced expertise</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          </div>
+          <h4>QuickBooks Level 2 Certified</h4>
+          <p>Deep technical knowledge of the full QBO ecosystem</p>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h4>Gusto Silver Partner</h4>
+          <p>Best-in-class payroll platform for your small business</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Trust Bar ─────────────────────────────────────────────────── -->
+<div id="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-badge">
+        <div class="trust-badge-icon intuit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>ProAdvisor Elite</strong>
+          <span>Intuit Certified</span>
+        </div>
+      </div>
+      <div class="trust-divider">|</div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon elite">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>QBO Level 2</strong>
+          <span>Advanced Certified</span>
+        </div>
+      </div>
+      <div class="trust-divider">|</div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon gusto">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>Gusto Silver Partner</strong>
+          <span>Payroll Specialist</span>
+        </div>
+      </div>
+      <div class="trust-divider">|</div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        </div>
+        <div class="trust-badge-text">
+          <strong>5.0 Google Rating</strong>
+          <span>19 Reviews</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── About Teaser ───────────────────────────────────────────────── -->
+<section id="about-teaser" class="section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <!-- Replace this div with an <img> tag once photos are available -->
+        <div class="about-img-placeholder"></div>
+        <div class="since-badge">
+          <span>Since</span>
+          <span>1999</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">More Than Just Bookkeepers</h2>
+        <p class="section-sub">
+          We offer something more than bookkeeping. We're entrepreneurs to the core.
+          When we work on your books, we see more than a Chart of Accounts. Our goal
+          is to make sure you think of us as a <strong>protective partner</strong> towards
+          your absolute success.
+        </p>
+        <p class="section-sub" style="margin-bottom: 0;">
+          Jim and Rebecca Spaak have been self-employed since 1999, building businesses
+          from the ground up and learning every hard lesson along the way. That experience
+          is what they bring to every client relationship.
+        </p>
+        <div class="about-pillars reveal reveal-delay-1">
+          <div class="pillar">
+            <h4>Get Your Time Back</h4>
+            <p>We see workflow issues that save money and — better yet — your most precious commodity: time.</p>
+          </div>
+          <div class="pillar">
+            <h4>Passionate for Vision</h4>
+            <p>Jim built a company from $0 to $500K in revenue. He's walked the road in front of you.</p>
+          </div>
+          <div class="pillar">
+            <h4>Process That Works</h4>
+            <p>Rebecca's background in banking, lending, and real estate drives the streamlined workflows we build.</p>
+          </div>
+          <div class="pillar">
+            <h4>A True Partnership</h4>
+            <p>We don't just enter journal entries — we invest in your success like it's our own business.</p>
+          </div>
+        </div>
+        <a href="about.html" class="btn btn-navy" style="margin-top: 32px;">Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services Teaser ────────────────────────────────────────────── -->
+<section id="services-teaser" class="section-pad">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-title">Services to Simplify Your Life</h2>
+      <p class="section-sub">
+        We don't just keep your books — we use the QuickBooks Online ecosystem to
+        bring clarity, accuracy, and efficiency to every corner of your finances.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        </div>
+        <h3>New Business Consulting</h3>
+        <p>We love learning about your business while sharing our financial expertise to help you meet your goals from day one.</p>
+        <a href="services.html#new-business" class="learn-link">Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 .49-3"></path></svg>
+        </div>
+        <h3>Prior Year Rebuilds</h3>
+        <p>If your books aren't accurate, a "do over" can save you from significant tax liability and set a clean foundation going forward.</p>
+        <a href="services.html#rebuilds" class="learn-link">Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+        </div>
+        <h3>Project Tracking</h3>
+        <p>Generate a Profit and Loss for each client job you take on, so you always know exactly where the money is going.</p>
+        <a href="services.html#project-tracking" class="learn-link">Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3>Gusto Payroll</h3>
+        <p>As a Gusto Silver Partner, we set up and manage one of the best small business payroll platforms available — reducing errors and saving time.</p>
+        <a href="services.html#payroll" class="learn-link">Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+        </div>
+        <h3>Credit Card Merchant Accounts</h3>
+        <p>Enable credit card payments for your business through Intuit's merchant services to speed up cash flow and modernize payments.</p>
+        <a href="services.html#merchant" class="learn-link">Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        </div>
+        <h3>Advanced Tax Strategies</h3>
+        <p>Cloud accounting and app integration put an end to access issues and unlock smarter, forward-looking tax planning for your business.</p>
+        <a href="services.html#tax" class="learn-link">Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+    <div class="services-cta">
+      <a href="services.html" class="btn btn-navy">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats ──────────────────────────────────────────────────────── -->
+<section id="stats" class="section-pad">
+  <div class="container">
+    <div class="stats-header">
+      <span class="section-label" style="color: var(--gold);">Do the Math</span>
+      <h2 class="section-title">The Real Cost of DIY Bookkeeping</h2>
+      <p class="section-sub" style="color: rgba(255,255,255,0.60);">
+        Running a small business means spending valuable time on administration instead of growth.
+        Here's what the data shows.
+      </p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-number" data-target="20" data-suffix="%">0%</span>
+        <p class="stat-label">of small business owners spend<br>3+ days per week on admin tasks alone</p>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-number" data-target="34" data-suffix=" hrs">0 hrs</span>
+        <p class="stat-label">average hours per month spent on administration vs. only 9 hours on business development</p>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-number" data-target="120" data-suffix=" days">0 days</span>
+        <p class="stat-label">of working days per year devoted to administrative tasks in small businesses</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Industries ─────────────────────────────────────────────────── -->
+<section id="industries" class="section-pad">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Industries We Serve</span>
+      <h2 class="section-title">We Speak Your Industry's Language</h2>
+      <p class="section-sub">
+        From contractors to restaurants to property managers, we bring
+        deep familiarity with the financial complexities of your specific business type.
+      </p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-tile reveal">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        </div>
+        <h4>Consulting</h4>
+        <div class="tile-overlay"><span>Consulting</span></div>
+      </div>
+      <div class="industry-tile reveal reveal-delay-1">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        </div>
+        <h4>Financial Services</h4>
+        <div class="tile-overlay"><span>Financial Services</span></div>
+      </div>
+      <div class="industry-tile reveal reveal-delay-2">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        </div>
+        <h4>Property Management</h4>
+        <div class="tile-overlay"><span>Property Management</span></div>
+      </div>
+      <div class="industry-tile reveal reveal-delay-3">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <h4>Real Estate Developer</h4>
+        <div class="tile-overlay"><span>Real Estate Developer</span></div>
+      </div>
+      <div class="industry-tile reveal">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+        </div>
+        <h4>Construction &amp; Contracting</h4>
+        <div class="tile-overlay"><span>Construction &amp; Contracting</span></div>
+      </div>
+      <div class="industry-tile reveal reveal-delay-1">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+        </div>
+        <h4>Agriculture &amp; Farming</h4>
+        <div class="tile-overlay"><span>Agriculture &amp; Farming</span></div>
+      </div>
+      <div class="industry-tile reveal reveal-delay-2">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+        </div>
+        <h4>Restaurant &amp; Bar</h4>
+        <div class="tile-overlay"><span>Restaurant &amp; Bar</span></div>
+      </div>
+      <div class="industry-tile reveal reveal-delay-3">
+        <div class="tile-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><line x1="20" y1="4" x2="8.12" y2="15.88"></line><line x1="14.47" y1="14.48" x2="20" y2="20"></line><line x1="8.12" y1="8.12" x2="12" y2="12"></line></svg>
+        </div>
+        <h4>Salons &amp; Beauty</h4>
+        <div class="tile-overlay"><span>Salons &amp; Beauty</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Client Names ───────────────────────────────────────────────── -->
+<div id="clients">
+  <div class="container">
+    <p class="clients-label">Clients we've served</p>
+    <div class="clients-list">
+      <span class="client-pill">Rhythm Builders, LLC</span>
+      <span class="client-pill">LMJ Studio LLC</span>
+      <span class="client-pill">Silverline Motors</span>
+      <span class="client-pill">Eyestone Law Offices</span>
+      <span class="client-pill">Dave's RVs</span>
+      <span class="client-pill">Synergy Appliances</span>
+      <span class="client-pill">Hillhouse, LLC</span>
+      <span class="client-pill">Rare Stock, LLC</span>
+      <span class="client-pill">Riverside Remodeling</span>
+      <span class="client-pill">IDA Design</span>
+      <span class="client-pill">Z&amp;T Properties</span>
+      <span class="client-pill">Covenant Home Builders</span>
+      <span class="client-pill">Roots Wild Garden Designs</span>
+      <span class="client-pill">EMMA International</span>
+      <span class="client-pill">Window Specialists, LLC</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Testimonials ───────────────────────────────────────────────── -->
+<section id="testimonials-preview" class="section-pad">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">What Clients Say</span>
+      <h2 class="section-title">They Said It Better Than We Could</h2>
+      <p class="section-sub">Rated 5.0 stars on Google — here's what our clients actually said.</p>
+    </div>
+    <div class="testimonials-carousel">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Jim &amp; Rebecca have been able to do what 2 other QBO recommended service providers could not. They come on board as a partner with an owner's view to help you understand your business and help you run your business so it doesn't run you. THEY ARE THE REAL DEAL!!!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JB</div>
+              <div class="author-info">
+                <strong>James Buchanan</strong>
+                <span>Window Specialists, LLC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Jim and Rebecca have changed the way we do business. Before we teamed up with them we tried various accounting methods and it was always chaotic. They have really helped us pull everything together and have streamlined it into a process that takes much less time… They are incredibly responsive. I have called Rebecca at 9pm not expecting her to answer and sure enough she answers. You can't go wrong here. They care."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">BB</div>
+              <div class="author-info">
+                <strong>Brian Burke</strong>
+                <span>Rhythm Builders, LLC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"I COULD NOT be as successful as I am today as a business owner without the help and guidance of Streamline Pros. I get to focus on my clients and making sure their experience is wonderful. I have never felt more confident running my own business. Streamline Pros is simply the best."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">LJ</div>
+              <div class="author-info">
+                <strong>Lacey Jarratt</strong>
+                <span>LMJ Studio LLC</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Jim and Rebecca are a stellar team and a huge asset to our business. They deeply care about our business beyond just a 'journal entry' transaction level. They pour into our business much more than would be expected and treat us like family. Great people that we are very grateful to work with!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">BT</div>
+              <div class="author-info">
+                <strong>Brian Teysen</strong>
+                <span>Synergy Appliances</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Kyle Apsey of Streamline Pros have been monumental to our family business. Their bookkeeping expertise has helped us streamline our accounting books and made a significant impact on our profitability and strategic planning. The peace of mind they have given us is priceless. They are truly the best around at what they do!"</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">KA</div>
+              <div class="author-info">
+                <strong>Kyle Apsey</strong>
+                <span>Family Business Client</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div><!-- /carousel -->
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+    </div>
+    <div class="testimonials-cta">
+      <a href="testimonials.html" class="btn btn-navy">Read All Testimonials</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ─────────────────────────────────────────────────── -->
+<section id="cta-banner" class="section-pad">
+  <div class="container">
+    <div class="cta-inner">
+      <span class="section-label">Ready to Get Started?</span>
+      <h2>See What Streamline Pros Can Do for You</h2>
+      <p>
+        We'll identify the needs of your company and create a plan tailored
+        for your business. No obligation — just a real conversation about
+        how we can help you get back to doing what you love.
+      </p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+        <a href="tel:6162925254" class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          (616) 292-5254
+        </a>
+      </div>
+      <div class="cta-quote">
+        <blockquote>"Where no counsel is, the people fall — but in the multitude of counselors there is safety."</blockquote>
+        <cite>— Jim Spaak, Founder</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────────── -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-wordmark">Streamline <em class="logo-accent">Pros</em></span>
+        </a>
+        <p>Expert bookkeeping and QuickBooks consulting for small businesses. Trusted partners since 1999.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/streamlinepros" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/company/streamline-pros" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#new-business">New Business Consulting</a></li>
+          <li><a href="services.html#rebuilds">Prior Year Rebuilds</a></li>
+          <li><a href="services.html#project-tracking">Project Tracking</a></li>
+          <li><a href="services.html#payroll">Gusto Payroll</a></li>
+          <li><a href="services.html#merchant">Merchant Accounts</a></li>
+          <li><a href="services.html#tax">Tax Strategies</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <div class="footer-contact">
+          <a href="tel:6162925254">(616) 292-5254</a><br>
+          <a href="contact.html">Schedule a Consultation</a><br><br>
+          <span style="color:rgba(255,255,255,0.28)">Michigan-based,<br>serving clients nationwide</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Streamline Pros. All rights reserved.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">ProAdvisor Elite</span>
+        <span class="footer-badge">QBO Level 2</span>
+        <span class="footer-badge">Gusto Silver Partner</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── JavaScript ─────────────────────────────────────────────────── -->
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+  // Close on link click
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      toggle.classList.remove('open');
+    });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => revealObserver.observe(el));
+
+  // Animated stat counters
+  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+  const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      let start = 0;
+      const duration = 1600;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      };
+      requestAnimationFrame(step);
+      countObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  statNumbers.forEach(el => countObserver.observe(el));
+
+  // Testimonial carousel
+  const track = document.getElementById('testimonialsTrack');
+  const slides = track.querySelectorAll('.testimonial-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  let current = 0;
+  let autoInterval;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(idx) {
+    current = (idx + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+  function startAuto() { autoInterval = setInterval(() => goTo(current + 1), 5000); }
+  function resetAuto() { clearInterval(autoInterval); startAuto(); }
+  startAuto();
+</script>
+</body>
+</html>

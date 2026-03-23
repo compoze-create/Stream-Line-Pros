@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Streamline Pros</title>
+  <meta name="description" content="Schedule a free consultation with Streamline Pros. Michigan-based QuickBooks bookkeeping experts available by phone or online. (616) 292-5254." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1B2D42; background: #fff; line-height: 1.6; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --navy:     #1B2D42;
+      --navy-mid: #25405E;
+      --steel:    #3C607F;
+      --accent:   #2E7A8E;
+      --gold:     #B89050;
+      --light:    #F5F4F1;
+      --mid-gray: #E2E5EC;
+      --text:     #1B2D42;
+      --muted:    #5A6572;
+      --white:    #ffffff;
+      --radius:   12px;
+      --shadow:   0 4px 24px rgba(27,45,66,0.10);
+      --shadow-lg:0 12px 48px rgba(27,45,66,0.16);
+    }
+
+    h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+    h3 { font-size: 1.15rem; }
+    p  { font-size: 1rem; color: var(--muted); }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .section-pad { padding: 88px 0; }
+    .section-label { display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .section-title { color: var(--navy); margin-bottom: 16px; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 0.92rem; cursor: pointer; border: none; transition: all 0.25s ease; white-space: nowrap; }
+    .btn-primary { background: var(--accent); color: var(--white); }
+    .btn-primary:hover { background: #256a7a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(46,122,142,0.30); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+    .btn-outline:hover { background: rgba(255,255,255,0.10); border-color: var(--white); }
+    .btn-full { width: 100%; justify-content: center; }
+
+    /* ── Header ── */
+    #site-header { position: sticky; top: 0; z-index: 100; background: var(--navy); box-shadow: 0 2px 20px rgba(0,0,0,0.20); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: flex; align-items: center; font-family: 'Plus Jakarta Sans', sans-serif; text-decoration: none; }
+    .logo-wordmark {
+      font-size: 1.26rem; font-weight: 800;
+      color: var(--white); letter-spacing: -0.02em;
+      font-style: normal;
+    }
+    .logo-accent { color: var(--gold); font-style: normal; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a { padding: 8px 14px; border-radius: 6px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.78); transition: color 0.2s, background 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); background: rgba(255,255,255,0.08); }
+    .nav-cta { margin-left: 12px; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--navy); border-top: 1px solid rgba(255,255,255,0.08); padding: 16px 24px 24px; z-index: 99; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; color: rgba(255,255,255,0.82); font-size: 1rem; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .btn { margin-top: 16px; width: 100%; justify-content: center; }
+    .top-bar { background: var(--steel); padding: 8px 0; font-size: 0.78rem; color: rgba(255,255,255,0.82); text-align: center; letter-spacing: 0.04em; }
+    .top-bar a { color: var(--white); font-weight: 600; }
+    .top-bar .social-link { display: inline-flex; align-items: center; gap: 4px; margin: 0 8px; }
+
+    /* ── Page Hero ── */
+    .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f1f30 100%); position: relative; overflow: hidden; padding: 80px 0 72px; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(60,96,127,0.35) 0%, transparent 65%); }
+    .hero-grid-lines { position: absolute; inset: 0; pointer-events: none; opacity: 0.03; background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 60px 60px; }
+    .page-hero-inner { position: relative; z-index: 1; text-align: center; }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; font-weight: 800; }
+    .page-hero p { color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 560px; margin: 0 auto; line-height: 1.75; }
+    .breadcrumb { display: flex; align-items: center; gap: 8px; justify-content: center; font-size: 0.80rem; color: rgba(255,255,255,0.45); margin-bottom: 20px; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .breadcrumb a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--white); }
+
+    /* ── Contact Layout ── */
+    #contact-main { background: var(--light); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+
+    /* ── Contact Info ── */
+    .contact-info {}
+    .contact-info-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 36px 32px; box-shadow: var(--shadow);
+      border: 1px solid var(--mid-gray); margin-bottom: 24px;
+    }
+    .contact-info-card h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--mid-gray); }
+    .contact-detail {
+      display: flex; align-items: flex-start; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-detail:last-child { margin-bottom: 0; }
+    .contact-detail-icon {
+      width: 38px; height: 38px; border-radius: 9px;
+      background: rgba(46,122,142,0.10); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-text strong { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .contact-detail-text span, .contact-detail-text a { font-size: 0.92rem; color: var(--muted); }
+    .contact-detail-text a { color: var(--accent); font-weight: 500; transition: color 0.2s; }
+    .contact-detail-text a:hover { color: var(--navy); }
+
+    .contact-hours { background: var(--light); border-radius: var(--radius); padding: 20px 24px; border: 1px solid var(--mid-gray); }
+    .contact-hours h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .hours-row { display: flex; justify-content: space-between; font-size: 0.84rem; margin-bottom: 6px; }
+    .hours-row:last-child { margin-bottom: 0; }
+    .hours-row .day { color: var(--navy); font-weight: 500; }
+    .hours-row .time { color: var(--muted); }
+
+    .social-links-block { display: flex; flex-direction: column; gap: 10px; }
+    .social-link-btn {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: 8px;
+      background: var(--light); border: 1px solid var(--mid-gray);
+      font-size: 0.88rem; font-weight: 500; color: var(--navy);
+      transition: all 0.2s;
+    }
+    .social-link-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .social-link-btn svg { flex-shrink: 0; }
+
+    /* ── Contact Form ── */
+    .contact-form-wrap {
+      background: var(--white); border-radius: 16px;
+      padding: 44px 40px; box-shadow: var(--shadow-lg);
+      border: 1px solid var(--mid-gray);
+    }
+    .form-header { margin-bottom: 32px; }
+    .form-header h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+    .form-header p { font-size: 0.92rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.80rem; font-weight: 700; color: var(--navy);
+      margin-bottom: 6px; letter-spacing: 0.02em;
+    }
+    .form-group label .required { color: var(--accent); margin-left: 2px; }
+    .form-control {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--mid-gray); border-radius: 8px;
+      font-family: 'Inter', sans-serif; font-size: 0.92rem; color: var(--text);
+      background: var(--white); transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none; appearance: none;
+    }
+    .form-control::placeholder { color: #A0ADB8; }
+    .form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(46,122,142,0.12); }
+    textarea.form-control { resize: vertical; min-height: 120px; line-height: 1.6; }
+    select.form-control { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235A6572' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+    .form-disclaimer { font-size: 0.78rem; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+    .form-success {
+      display: none; text-align: center; padding: 40px 24px;
+    }
+    .form-success-icon {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(46,122,142,0.12); color: var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .form-success h3 { color: var(--navy); margin-bottom: 8px; }
+    .form-success p { font-size: 0.95rem; }
+
+    /* ── What to Expect ── */
+    #what-to-expect { background: var(--navy); position: relative; overflow: hidden; }
+    #what-to-expect::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(60,96,127,0.40) 0%, transparent 65%); }
+    .expect-inner { position: relative; z-index: 1; }
+    .expect-header { text-align: center; margin-bottom: 56px; }
+    .expect-header .section-title { color: var(--white); }
+    .expect-header p { color: rgba(255,255,255,0.60); max-width: 560px; margin: 0 auto; }
+    .expect-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .expect-step {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius); padding: 32px 24px; text-align: center;
+    }
+    .expect-step-num {
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.70rem; font-weight: 800;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .expect-step-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(46,122,142,0.20); color: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .expect-step h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+    .expect-step p { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+    .faq-item { padding: 28px; background: var(--light); border-radius: var(--radius); border: 1px solid var(--mid-gray); }
+    .faq-item h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .faq-item p { font-size: 0.88rem; line-height: 1.72; }
+
+    /* ── Footer ── */
+    #footer { background: #0e1c2a; padding: 64px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: 0.86rem; color: rgba(255,255,255,0.45); margin-top: 16px; max-width: 280px; line-height: 1.75; }
+    .footer-social { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn { width: 34px; height: 34px; border-radius: 7px; background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.60); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; transition: all 0.2s; border: 1px solid rgba(255,255,255,0.08); }
+    .social-btn:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+    .footer-col h5 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { font-size: 0.86rem; color: rgba(255,255,255,0.58); transition: color 0.2s; }
+    .footer-col ul a:hover { color: var(--white); }
+    .footer-contact { font-size: 0.86rem; color: rgba(255,255,255,0.58); line-height: 1.85; }
+    .footer-contact a { color: var(--gold); font-weight: 500; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-bottom p { font-size: 0.76rem; color: rgba(255,255,255,0.30); }
+    .footer-badges { display: flex; gap: 8px; }
+    .footer-badge { padding: 4px 10px; border-radius: 4px; background: rgba(255,255,255,0.05); font-size: 0.68rem; color: rgba(255,255,255,0.35); border: 1px solid rgba(255,255,255,0.08); font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+
+    @media (max-width: 1024px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .expect-steps { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: flex; }
+      #site-header { position: relative; }
+      .mobile-menu { position: relative; top: 0; }
+      .contact-form-wrap { padding: 28px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .expect-steps { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Top Bar ── -->
+<div class="top-bar">
+  Bookkeeping Solutions &nbsp;|&nbsp;
+  <a href="tel:6162925254">(616) 292-5254</a>
+  &nbsp;|&nbsp;
+  <a class="social-link" href="https://www.linkedin.com/company/streamline-pros" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="social-link" href="https://www.facebook.com/streamlinepros" target="_blank" rel="noopener">Facebook</a>
+</div>
+
+<!-- ── Header ── -->
+<header id="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Streamline Pros Home">
+        <span class="logo-wordmark">Streamline <em class="logo-accent">Pros</em></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:6162925254">(616) 292-5254</a>
+    <a href="contact.html" class="btn btn-primary">Get Started</a>
+  </div>
+</header>
+
+<!-- ── Page Hero ── -->
+<section class="page-hero">
+  <div class="hero-grid-lines"></div>
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        <span>Contact</span>
+      </div>
+      <span class="section-label">Let's Talk</span>
+      <h1>Start with a Free Conversation</h1>
+      <p>No obligations, no sales pressure. Just a real discussion about your business and how we can help you get your finances under control.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact Main ── -->
+<section id="contact-main" class="section-pad">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info Column -->
+      <div class="contact-info reveal">
+
+        <div class="contact-info-card">
+          <h3>Get in Touch</h3>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Phone</strong>
+              <a href="tel:6162925254">(616) 292-5254</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Email</strong>
+              <a href="mailto:info@streamlinepros.com">info@streamlinepros.com</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div class="contact-detail-text">
+              <strong>Location</strong>
+              <span>Michigan-based, serving clients nationwide</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <h3>Business Hours</h3>
+          <div class="contact-hours">
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">8:00am – 6:00pm</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time">By appointment</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time">Closed</span></div>
+          </div>
+          <p style="font-size: 0.80rem; margin-top: 14px; line-height: 1.6;">
+            Our team is known for going above and beyond. If you call outside business hours, we'll do our best to respond.
+          </p>
+        </div>
+
+        <div class="contact-info-card">
+          <h3>Follow Along</h3>
+          <div class="social-links-block">
+            <a href="https://www.linkedin.com/company/streamline-pros" target="_blank" rel="noopener" class="social-link-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              LinkedIn — Streamline Pros
+            </a>
+            <a href="https://www.facebook.com/streamlinepros" target="_blank" rel="noopener" class="social-link-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              Facebook — Streamline Pros
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Form Column -->
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <div class="form-header">
+          <h2>Schedule a Free Consultation</h2>
+          <p>Fill out the form below and we'll reach out within one business day to schedule a time that works for you.</p>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" name="firstName" class="form-control" placeholder="Jane" required autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Smith" required autocomplete="family-name" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="jane@yourbusiness.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="(616) 000-0000" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="businessName">Business Name</label>
+            <input type="text" id="businessName" name="businessName" class="form-control" placeholder="Your Company LLC" autocomplete="organization" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service You're Interested In</label>
+            <select id="service" name="service" class="form-control">
+              <option value="">Select a service...</option>
+              <option value="new-business">New Business Consulting</option>
+              <option value="rebuilds">Prior Year Rebuilds</option>
+              <option value="project-tracking">Project Tracking</option>
+              <option value="payroll">Gusto Payroll</option>
+              <option value="merchant">Credit Card Merchant Accounts</option>
+              <option value="tax">Advanced Tax Strategies</option>
+              <option value="general">General Bookkeeping</option>
+              <option value="not-sure">Not Sure — I Need Guidance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell Us About Your Business <span class="required">*</span></label>
+            <textarea id="message" name="message" class="form-control" rows="5" placeholder="Briefly describe your business and what financial challenges you're facing. The more context you share, the more helpful our first call will be." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" style="font-size: 1rem; padding: 16px 28px;">
+            Send Message
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+          <p class="form-disclaimer">We'll never share your information. This form is for scheduling purposes only.</p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. We'll get back to you within one business day to schedule your free consultation.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── What to Expect ── -->
+<section id="what-to-expect" class="section-pad">
+  <div class="container">
+    <div class="expect-inner">
+      <div class="expect-header">
+        <span class="section-label" style="color: var(--gold);">The Process</span>
+        <h2 class="section-title">What Happens After You Reach Out</h2>
+        <p>Here's exactly what to expect from your first message to a fully running partnership.</p>
+      </div>
+      <div class="expect-steps">
+        <div class="expect-step">
+          <div class="expect-step-num">Step 01</div>
+          <div class="expect-step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <h4>We Call You Back</h4>
+          <p>Within one business day, a member of our team will reach out to schedule a free consultation at a time that works for you.</p>
+        </div>
+        <div class="expect-step">
+          <div class="expect-step-num">Step 02</div>
+          <div class="expect-step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h4>30-Minute Consultation</h4>
+          <p>We spend real time understanding your business, your challenges, and your goals — no sales script, just an honest conversation.</p>
+        </div>
+        <div class="expect-step">
+          <div class="expect-step-num">Step 03</div>
+          <div class="expect-step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          </div>
+          <h4>Tailored Proposal</h4>
+          <p>We put together a plan designed specifically for your business — the right services, the right scope, and flat-rate transparent pricing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq" class="section-pad">
+  <div class="container">
+    <div class="text-center" style="margin-bottom: 0;">
+      <span class="section-label">Common Questions</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p style="max-width: 560px; margin: 0 auto;">Answers to the questions we hear most often from new clients.</p>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <h4>Do I need to be local to Michigan?</h4>
+        <p>Not at all. We're Michigan-based but work with clients nationwide. With cloud accounting tools, location is no barrier to a great working relationship.</p>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <h4>Do I need to already use QuickBooks?</h4>
+        <p>No. We can set you up on QuickBooks Online from scratch, migrate you from another system, or optimize a QBO setup you already have.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4>What if my books are a complete mess?</h4>
+        <p>That's one of the things we do most. Prior year rebuilds are a core service — we'll clean up what's there and set up systems to prevent future problems.</p>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <h4>How much do your services cost?</h4>
+        <p>We provide flat-rate, transparent pricing after your free consultation. Every plan is tailored to the specific needs of your business, so we price accordingly.</p>
+      </div>
+      <div class="faq-item reveal">
+        <h4>Will I work directly with Jim and Rebecca?</h4>
+        <p>You will have dedicated team members and direct access to Jim and Rebecca throughout our relationship. You're never handed off to someone who doesn't know your business.</p>
+      </div>
+      <div class="faq-item reveal reveal-delay-1">
+        <h4>How quickly can you get started?</h4>
+        <p>After the consultation and proposal, most clients are fully onboarded within two to three weeks. For urgent situations, we can often move faster.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-wordmark">Streamline <em class="logo-accent">Pros</em></span>
+        </a>
+        <p>Expert bookkeeping and QuickBooks consulting for small businesses. Trusted partners since 1999.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/streamlinepros" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/company/streamline-pros" target="_blank" rel="noopener" class="social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#new-business">New Business Consulting</a></li>
+          <li><a href="services.html#rebuilds">Prior Year Rebuilds</a></li>
+          <li><a href="services.html#project-tracking">Project Tracking</a></li>
+          <li><a href="services.html#payroll">Gusto Payroll</a></li>
+          <li><a href="services.html#merchant">Merchant Accounts</a></li>
+          <li><a href="services.html#tax">Tax Strategies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in Touch</h5>
+        <div class="footer-contact">
+          <a href="tel:6162925254">(616) 292-5254</a><br>
+          <a href="contact.html">Schedule a Consultation</a><br><br>
+          <span style="color:rgba(255,255,255,0.28)">Michigan-based,<br>serving clients nationwide</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Streamline Pros. All rights reserved.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">ProAdvisor Elite</span>
+        <span class="footer-badge">QBO Level 2</span>
+        <span class="footer-badge">Gusto Silver Partner</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  const toggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => { mobileMenu.classList.remove('open'); toggle.classList.remove('open'); });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Form submission (placeholder — backend to be added later)
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName  = document.getElementById('lastName').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const message   = document.getElementById('message').value.trim();
+    if (!firstName || !lastName || !email || !message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    // Show success state
+    this.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+</script>
+</body>
+</html>
