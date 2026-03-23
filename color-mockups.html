@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Palette Options — Streamline Pros</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #DDDBD8;
+      padding: 48px 32px;
+    }
+    .page-header { text-align: center; margin-bottom: 48px; }
+    .page-header h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.6rem; font-weight: 800; color: #1a1a1a; margin-bottom: 8px;
+    }
+    .page-header p { color: #666; font-size: 0.92rem; margin-bottom: 10px; }
+    .label-note {
+      display: inline-block; font-size: 0.8rem; color: #888;
+      background: rgba(0,0,0,0.07); padding: 4px 14px; border-radius: 20px;
+    }
+    .grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px; max-width: 1280px; margin: 0 auto;
+    }
+    .card { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.12); }
+    .card-label {
+      padding: 12px 18px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.82rem; font-weight: 700; color: #333;
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; border-bottom: 1px solid #ECEAE7;
+    }
+    .card-label .rec { margin-left: auto; font-size: 0.72rem; font-weight: 700; }
+    .card-label .vibe { margin-left: auto; font-size: 0.68rem; color: #999; font-weight: 400; font-style: italic; }
+
+    /* ── Nav (light) ─────────────────────────────────────── */
+    .mock-nav {
+      display: flex; align-items: center; padding: 0 22px; height: 56px;
+      justify-content: space-between; border-bottom: 1px solid;
+    }
+    .mock-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em;
+    }
+    .mock-logo em { font-style: normal; }
+    .mock-nav-links {
+      display: flex; gap: 20px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.72rem; font-weight: 500;
+    }
+    .mock-cta-btn {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 7px 16px; border-radius: 6px; color: #fff;
+    }
+
+    /* ── Hero (LIGHT background, dark text) ─────────────── */
+    .mock-hero { padding: 36px 22px 30px; }
+    .mock-eyebrow {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .mock-h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.7rem; font-weight: 800; line-height: 1.15; margin-bottom: 12px;
+    }
+    .mock-h1 em { font-style: italic; }
+    .mock-body { font-size: 0.73rem; line-height: 1.65; max-width: 360px; margin-bottom: 20px; }
+    .mock-btns { display: flex; gap: 10px; align-items: center; }
+    .mock-btn-primary {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      padding: 9px 18px; border-radius: 7px; color: #fff;
+    }
+    .mock-btn-ghost {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 9px 18px; border-radius: 7px; border: 1.5px solid;
+    }
+
+    /* ── Stats strip (medium tone) ────────────────────────── */
+    .mock-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      padding: 16px 22px; text-align: center;
+    }
+    .mock-stat-n {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.5rem; font-weight: 800; display: block; margin-bottom: 3px;
+    }
+    .mock-stat-l { font-size: 0.6rem; }
+
+    /* ── Service cards ────────────────────────────────────── */
+    .mock-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 10px; padding: 18px 22px;
+    }
+    .mock-card { border-radius: 10px; padding: 14px; }
+    .mock-card-icon {
+      width: 30px; height: 30px; border-radius: 7px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 9px;
+    }
+    .mock-card-icon svg {
+      width: 14px; height: 14px;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; fill: none;
+    }
+    .mock-card-h {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.7rem; font-weight: 700; margin-bottom: 4px;
+    }
+    .mock-card-p { font-size: 0.62rem; line-height: 1.5; }
+
+    /* ── Swatch bar ───────────────────────────────────────── */
+    .swatch-row { display: flex; gap: 8px; align-items: center; padding: 12px 22px 16px; }
+    .swatch { width: 22px; height: 22px; border-radius: 5px; box-shadow: 0 1px 4px rgba(0,0,0,0.10); }
+    .swatch-labels { font-size: 0.62rem; color: #999; margin-left: 4px; font-family: 'Inter', sans-serif; }
+
+    /* ══════════════════════════════════════════════════════════
+       A — WARM CREAM & SAGE
+       All light. Warm off-white backgrounds, sage green accent.
+       Quiet, premium, like a confident advisory firm.
+    ══════════════════════════════════════════════════════════ */
+    .opt-a {
+      --nav-bg:    #FFFFFF;
+      --nav-brd:   #EAE8E4;
+      --hero-bg:   #F3EFE8;
+      --stats-bg:  #EBE6DE;
+      --cards-bg:  #FAF8F4;
+      --card-bg:   #FFFFFF;
+      --text:      #252820;
+      --muted:     #6A6E64;
+      --acc:       #3D7A60;
+      --gld:       #B89040;
+    }
+    .opt-a .mock-nav { background: var(--nav-bg); border-color: var(--nav-brd); }
+    .opt-a .mock-logo { color: var(--text); }
+    .opt-a .mock-logo em { color: var(--acc); }
+    .opt-a .mock-nav-links span { color: #6A6E64; }
+    .opt-a .mock-cta-btn { background: var(--acc); }
+    .opt-a .mock-hero { background: var(--hero-bg); }
+    .opt-a .mock-eyebrow { color: var(--acc); }
+    .opt-a .mock-h1 { color: var(--text); }
+    .opt-a .mock-body { color: var(--muted); }
+    .opt-a .mock-btn-primary { background: var(--acc); }
+    .opt-a .mock-btn-ghost { border-color: var(--acc); color: var(--acc); }
+    .opt-a .mock-stats { background: var(--stats-bg); }
+    .opt-a .mock-stat-n { color: var(--acc); }
+    .opt-a .mock-stat-l { color: var(--muted); }
+    .opt-a .mock-cards { background: var(--cards-bg); }
+    .opt-a .mock-card { background: var(--card-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .opt-a .mock-card-icon { background: rgba(61,122,96,0.10); }
+    .opt-a .mock-card-icon svg { stroke: var(--acc); }
+    .opt-a .mock-card-h { color: var(--text); }
+    .opt-a .mock-card-p { color: var(--muted); }
+    .opt-a .swatch-row { background: var(--cards-bg); }
+    .opt-a .card-label .rec { color: var(--acc); }
+
+    /* ══════════════════════════════════════════════════════════
+       B — SOFT WHITE & TEAL
+       Barely-there green tint on white. Fresh, airy, clean.
+       Teal accent pops cleanly against the near-white.
+    ══════════════════════════════════════════════════════════ */
+    .opt-b {
+      --nav-bg:    #FFFFFF;
+      --nav-brd:   #E4EDEA;
+      --hero-bg:   #EBF4EF;
+      --stats-bg:  #DCF0EA;
+      --cards-bg:  #F4FAF7;
+      --card-bg:   #FFFFFF;
+      --text:      #1C2C26;
+      --muted:     #5A6E66;
+      --acc:       #267A60;
+      --gld:       #C4A040;
+    }
+    .opt-b .mock-nav { background: var(--nav-bg); border-color: var(--nav-brd); }
+    .opt-b .mock-logo { color: var(--text); }
+    .opt-b .mock-logo em { color: var(--acc); }
+    .opt-b .mock-nav-links span { color: #5A7060; }
+    .opt-b .mock-cta-btn { background: var(--acc); }
+    .opt-b .mock-hero { background: var(--hero-bg); }
+    .opt-b .mock-eyebrow { color: var(--acc); }
+    .opt-b .mock-h1 { color: var(--text); }
+    .opt-b .mock-body { color: var(--muted); }
+    .opt-b .mock-btn-primary { background: var(--acc); }
+    .opt-b .mock-btn-ghost { border-color: var(--acc); color: var(--acc); }
+    .opt-b .mock-stats { background: var(--stats-bg); }
+    .opt-b .mock-stat-n { color: var(--acc); }
+    .opt-b .mock-stat-l { color: var(--muted); }
+    .opt-b .mock-cards { background: var(--cards-bg); }
+    .opt-b .mock-card { background: var(--card-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .opt-b .mock-card-icon { background: rgba(38,122,96,0.10); }
+    .opt-b .mock-card-icon svg { stroke: var(--acc); }
+    .opt-b .mock-card-h { color: var(--text); }
+    .opt-b .mock-card-p { color: var(--muted); }
+    .opt-b .swatch-row { background: var(--cards-bg); }
+    .opt-b .card-label .rec { color: var(--acc); }
+
+    /* ══════════════════════════════════════════════════════════
+       C — WARM SAND & DEEP GOLD
+       Warm parchment throughout. Gold as the primary accent —
+       premium, editorial, like a private wealth firm.
+    ══════════════════════════════════════════════════════════ */
+    .opt-c {
+      --nav-bg:    #FFFFFF;
+      --nav-brd:   #EDE6D8;
+      --hero-bg:   #F5EFE2;
+      --stats-bg:  #EDE4D0;
+      --cards-bg:  #FAF6EE;
+      --card-bg:   #FFFFFF;
+      --text:      #2A2218;
+      --muted:     #6A6050;
+      --acc:       #9A7230;
+      --sec:       #4A7A6A;
+    }
+    .opt-c .mock-nav { background: var(--nav-bg); border-color: var(--nav-brd); }
+    .opt-c .mock-logo { color: var(--text); }
+    .opt-c .mock-logo em { color: var(--acc); }
+    .opt-c .mock-nav-links span { color: #7A6A54; }
+    .opt-c .mock-cta-btn { background: var(--acc); }
+    .opt-c .mock-hero { background: var(--hero-bg); }
+    .opt-c .mock-eyebrow { color: var(--acc); }
+    .opt-c .mock-h1 { color: var(--text); }
+    .opt-c .mock-body { color: var(--muted); }
+    .opt-c .mock-btn-primary { background: var(--acc); }
+    .opt-c .mock-btn-ghost { border-color: var(--acc); color: var(--acc); }
+    .opt-c .mock-stats { background: var(--stats-bg); }
+    .opt-c .mock-stat-n { color: var(--acc); }
+    .opt-c .mock-stat-l { color: var(--muted); }
+    .opt-c .mock-cards { background: var(--cards-bg); }
+    .opt-c .mock-card { background: var(--card-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .opt-c .mock-card-icon { background: rgba(154,114,48,0.10); }
+    .opt-c .mock-card-icon svg { stroke: var(--acc); }
+    .opt-c .mock-card-h { color: var(--text); }
+    .opt-c .mock-card-p { color: var(--muted); }
+    .opt-c .swatch-row { background: var(--cards-bg); }
+    .opt-c .card-label .rec { color: var(--acc); }
+
+    /* ══════════════════════════════════════════════════════════
+       D — COOL LIGHT GRAY & SLATE TEAL
+       Clean cool-white. Medium slate-teal accent. Most minimal,
+       neutral, and versatile — pairs with any imagery.
+    ══════════════════════════════════════════════════════════ */
+    .opt-d {
+      --nav-bg:    #FFFFFF;
+      --nav-brd:   #E4EAEC;
+      --hero-bg:   #EBF2F4;
+      --stats-bg:  #DDE8EC;
+      --cards-bg:  #F4F8FA;
+      --card-bg:   #FFFFFF;
+      --text:      #1C2830;
+      --muted:     #5A6870;
+      --acc:       #2A7888;
+      --gld:       #B89A40;
+    }
+    .opt-d .mock-nav { background: var(--nav-bg); border-color: var(--nav-brd); }
+    .opt-d .mock-logo { color: var(--text); }
+    .opt-d .mock-logo em { color: var(--acc); }
+    .opt-d .mock-nav-links span { color: #5A6870; }
+    .opt-d .mock-cta-btn { background: var(--acc); }
+    .opt-d .mock-hero { background: var(--hero-bg); }
+    .opt-d .mock-eyebrow { color: var(--acc); }
+    .opt-d .mock-h1 { color: var(--text); }
+    .opt-d .mock-body { color: var(--muted); }
+    .opt-d .mock-btn-primary { background: var(--acc); }
+    .opt-d .mock-btn-ghost { border-color: var(--acc); color: var(--acc); }
+    .opt-d .mock-stats { background: var(--stats-bg); }
+    .opt-d .mock-stat-n { color: var(--acc); }
+    .opt-d .mock-stat-l { color: var(--muted); }
+    .opt-d .mock-cards { background: var(--cards-bg); }
+    .opt-d .mock-card { background: var(--card-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .opt-d .mock-card-icon { background: rgba(42,120,136,0.10); }
+    .opt-d .mock-card-icon svg { stroke: var(--acc); }
+    .opt-d .mock-card-h { color: var(--text); }
+    .opt-d .mock-card-p { color: var(--muted); }
+    .opt-d .swatch-row { background: var(--cards-bg); }
+    .opt-d .card-label .rec { color: var(--acc); }
+
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Color Palette Options — Streamline Pros</h1>
+  <p>All light backgrounds. No dark colors anywhere on the page. Accent colors carry the contrast.</p>
+  <div class="label-note">★ = Recommended for this brand and industry</div>
+</div>
+
+<div class="grid">
+
+  <!-- ══ A: WARM CREAM & SAGE ══ -->
+  <div class="card opt-a">
+    <div class="card-label">A — Warm Cream &amp; Sage <span class="rec">★ Recommended</span></div>
+    <div class="mock-nav">
+      <span class="mock-logo">Streamline <em>Pros</em></span>
+      <div class="mock-nav-links"><span>Services</span><span>About</span><span>Testimonials</span></div>
+      <span class="mock-cta-btn">Get Started</span>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-eyebrow">Trusted Since 1999</div>
+      <div class="mock-h1">Reduce Your<br><em>"Head Rent."</em></div>
+      <div class="mock-body">Expert QuickBooks bookkeeping so you can stop carrying the mental load of your finances and get back to what you love.</div>
+      <div class="mock-btns">
+        <span class="mock-btn-primary">Schedule Free Consultation</span>
+        <span class="mock-btn-ghost">Explore Services</span>
+      </div>
+    </div>
+    <div class="mock-stats">
+      <div><span class="mock-stat-n">25+</span><span class="mock-stat-l">Years of Experience</span></div>
+      <div><span class="mock-stat-n">100+</span><span class="mock-stat-l">Clients Served</span></div>
+      <div><span class="mock-stat-n">5.0</span><span class="mock-stat-l">Google Rating</span></div>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 1 18"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="mock-card-h">New Business Setup</div><div class="mock-card-p">Chart of accounts, QBO config, and a clean start.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="mock-card-h">Prior Year Rebuilds</div><div class="mock-card-p">Untangle messy or incomplete books.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="mock-card-h">Ongoing Bookkeeping</div><div class="mock-card-p">Monthly reconciliation, always current.</div></div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#3D7A60"></div>
+      <div class="swatch" style="background:#B89040"></div>
+      <div class="swatch" style="background:#F3EFE8;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#EBE6DE;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#FFFFFF;border:1px solid #ddd"></div>
+      <span class="swatch-labels">Sage · Gold · Hero Cream · Stats Warm · White</span>
+    </div>
+  </div>
+
+  <!-- ══ B: SOFT WHITE & TEAL ══ -->
+  <div class="card opt-b">
+    <div class="card-label">B — Soft White &amp; Teal <span class="vibe">Fresh, airy, clean</span></div>
+    <div class="mock-nav">
+      <span class="mock-logo">Streamline <em>Pros</em></span>
+      <div class="mock-nav-links"><span>Services</span><span>About</span><span>Testimonials</span></div>
+      <span class="mock-cta-btn">Get Started</span>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-eyebrow">Trusted Since 1999</div>
+      <div class="mock-h1">Reduce Your<br><em>"Head Rent."</em></div>
+      <div class="mock-body">Expert QuickBooks bookkeeping so you can stop carrying the mental load of your finances and get back to what you love.</div>
+      <div class="mock-btns">
+        <span class="mock-btn-primary">Schedule Free Consultation</span>
+        <span class="mock-btn-ghost">Explore Services</span>
+      </div>
+    </div>
+    <div class="mock-stats">
+      <div><span class="mock-stat-n">25+</span><span class="mock-stat-l">Years of Experience</span></div>
+      <div><span class="mock-stat-n">100+</span><span class="mock-stat-l">Clients Served</span></div>
+      <div><span class="mock-stat-n">5.0</span><span class="mock-stat-l">Google Rating</span></div>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 1 18"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="mock-card-h">New Business Setup</div><div class="mock-card-p">Chart of accounts, QBO config, and a clean start.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="mock-card-h">Prior Year Rebuilds</div><div class="mock-card-p">Untangle messy or incomplete books.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="mock-card-h">Ongoing Bookkeeping</div><div class="mock-card-p">Monthly reconciliation, always current.</div></div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#267A60"></div>
+      <div class="swatch" style="background:#C4A040"></div>
+      <div class="swatch" style="background:#EBF4EF;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#DCF0EA;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#FFFFFF;border:1px solid #ddd"></div>
+      <span class="swatch-labels">Teal · Gold · Hero Mint · Stats Soft · White</span>
+    </div>
+  </div>
+
+  <!-- ══ C: WARM SAND & GOLD ══ -->
+  <div class="card opt-c">
+    <div class="card-label">C — Warm Sand &amp; Gold <span class="vibe">Premium, editorial, refined</span></div>
+    <div class="mock-nav">
+      <span class="mock-logo">Streamline <em>Pros</em></span>
+      <div class="mock-nav-links"><span>Services</span><span>About</span><span>Testimonials</span></div>
+      <span class="mock-cta-btn">Get Started</span>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-eyebrow">Trusted Since 1999</div>
+      <div class="mock-h1">Reduce Your<br><em>"Head Rent."</em></div>
+      <div class="mock-body">Expert QuickBooks bookkeeping so you can stop carrying the mental load of your finances and get back to what you love.</div>
+      <div class="mock-btns">
+        <span class="mock-btn-primary">Schedule Free Consultation</span>
+        <span class="mock-btn-ghost">Explore Services</span>
+      </div>
+    </div>
+    <div class="mock-stats">
+      <div><span class="mock-stat-n">25+</span><span class="mock-stat-l">Years of Experience</span></div>
+      <div><span class="mock-stat-n">100+</span><span class="mock-stat-l">Clients Served</span></div>
+      <div><span class="mock-stat-n">5.0</span><span class="mock-stat-l">Google Rating</span></div>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 1 18"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="mock-card-h">New Business Setup</div><div class="mock-card-p">Chart of accounts, QBO config, and a clean start.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="mock-card-h">Prior Year Rebuilds</div><div class="mock-card-p">Untangle messy or incomplete books.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="mock-card-h">Ongoing Bookkeeping</div><div class="mock-card-p">Monthly reconciliation, always current.</div></div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#9A7230"></div>
+      <div class="swatch" style="background:#4A7A6A"></div>
+      <div class="swatch" style="background:#F5EFE2;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#EDE4D0;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#FFFFFF;border:1px solid #ddd"></div>
+      <span class="swatch-labels">Gold · Sage · Hero Sand · Stats Parchment · White</span>
+    </div>
+  </div>
+
+  <!-- ══ D: COOL LIGHT & SLATE TEAL ══ -->
+  <div class="card opt-d">
+    <div class="card-label">D — Cool Light &amp; Slate Teal <span class="vibe">Crisp, modern, versatile</span></div>
+    <div class="mock-nav">
+      <span class="mock-logo">Streamline <em>Pros</em></span>
+      <div class="mock-nav-links"><span>Services</span><span>About</span><span>Testimonials</span></div>
+      <span class="mock-cta-btn">Get Started</span>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-eyebrow">Trusted Since 1999</div>
+      <div class="mock-h1">Reduce Your<br><em>"Head Rent."</em></div>
+      <div class="mock-body">Expert QuickBooks bookkeeping so you can stop carrying the mental load of your finances and get back to what you love.</div>
+      <div class="mock-btns">
+        <span class="mock-btn-primary">Schedule Free Consultation</span>
+        <span class="mock-btn-ghost">Explore Services</span>
+      </div>
+    </div>
+    <div class="mock-stats">
+      <div><span class="mock-stat-n">25+</span><span class="mock-stat-l">Years of Experience</span></div>
+      <div><span class="mock-stat-n">100+</span><span class="mock-stat-l">Clients Served</span></div>
+      <div><span class="mock-stat-n">5.0</span><span class="mock-stat-l">Google Rating</span></div>
+    </div>
+    <div class="mock-cards">
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 1 18"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="mock-card-h">New Business Setup</div><div class="mock-card-p">Chart of accounts, QBO config, and a clean start.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></div><div class="mock-card-h">Prior Year Rebuilds</div><div class="mock-card-p">Untangle messy or incomplete books.</div></div>
+      <div class="mock-card"><div class="mock-card-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="mock-card-h">Ongoing Bookkeeping</div><div class="mock-card-p">Monthly reconciliation, always current.</div></div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#2A7888"></div>
+      <div class="swatch" style="background:#B89A40"></div>
+      <div class="swatch" style="background:#EBF2F4;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#DDE8EC;border:1px solid #ddd"></div>
+      <div class="swatch" style="background:#FFFFFF;border:1px solid #ddd"></div>
+      <span class="swatch-labels">Teal · Gold · Hero Mist · Stats Cool · White</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

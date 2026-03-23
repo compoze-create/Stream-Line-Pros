@@ -757,6 +757,417 @@
   </div>
 </section>
 
+<!-- ── Pricing Calculator ── -->
+<section id="pricing-calculator" class="section-pad reveal">
+  <div class="container">
+
+    <div class="text-center" style="margin-bottom: 52px;">
+      <span class="section-label">What Will It Cost?</span>
+      <h2 class="section-title">Get an Instant Estimate</h2>
+      <p class="section-sub">Answer four quick questions and we'll show you a starting price for your situation. Every business is different — your free consultation nails down the exact number.</p>
+    </div>
+
+    <div class="calc-shell">
+
+      <!-- ── Step 1: Business Type ── -->
+      <div class="calc-step">
+        <div class="calc-step-label">
+          <span class="calc-step-num">1</span>
+          What type of business do you have?
+        </div>
+        <div class="calc-options" data-group="biztype">
+          <button class="calc-opt" data-value="sole" data-base="175">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span class="calc-opt-title">Sole Proprietor</span>
+            <span class="calc-opt-sub">Freelancer or self-employed</span>
+          </button>
+          <button class="calc-opt" data-value="llc" data-base="225">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            <span class="calc-opt-title">LLC</span>
+            <span class="calc-opt-sub">Single or multi-member</span>
+          </button>
+          <button class="calc-opt" data-value="scorp" data-base="325">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span class="calc-opt-title">S-Corp or C-Corp</span>
+            <span class="calc-opt-sub">Incorporated business</span>
+          </button>
+          <button class="calc-opt" data-value="partner" data-base="275">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span class="calc-opt-title">Partnership</span>
+            <span class="calc-opt-sub">Two or more partners</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Step 2: Transaction Volume ── -->
+      <div class="calc-step">
+        <div class="calc-step-label">
+          <span class="calc-step-num">2</span>
+          How many transactions does your business process each month?
+          <span class="calc-hint">Sales, purchases, expenses, payroll deposits, etc.</span>
+        </div>
+        <div class="calc-options" data-group="volume">
+          <button class="calc-opt" data-value="low" data-vol="0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="16"/><line x1="12" y1="20" x2="12" y2="14"/><line x1="6" y1="20" x2="6" y2="18"/></svg>
+            <span class="calc-opt-title">Under 50</span>
+            <span class="calc-opt-sub">Light activity</span>
+          </button>
+          <button class="calc-opt" data-value="med" data-vol="100">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span class="calc-opt-title">50 – 150</span>
+            <span class="calc-opt-sub">Moderate activity</span>
+          </button>
+          <button class="calc-opt" data-value="high" data-vol="200">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 1 18"/><polyline points="16 7 22 7 22 13"/></svg>
+            <span class="calc-opt-title">150 – 300</span>
+            <span class="calc-opt-sub">Active business</span>
+          </button>
+          <button class="calc-opt" data-value="vhigh" data-vol="325">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <span class="calc-opt-title">300+</span>
+            <span class="calc-opt-sub">High volume</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Step 3: Add-on Services ── -->
+      <div class="calc-step">
+        <div class="calc-step-label">
+          <span class="calc-step-num">3</span>
+          Which additional services are you interested in?
+          <span class="calc-hint">Monthly bookkeeping is always included. Select any extras.</span>
+        </div>
+        <div class="calc-addons">
+          <label class="calc-addon">
+            <input type="checkbox" class="calc-addon-check" data-addon="payroll" data-cost="85">
+            <div class="calc-addon-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              <div>
+                <strong>Gusto Payroll</strong>
+                <span>Setup &amp; ongoing payroll management</span>
+              </div>
+              <em class="addon-price">+$85/mo</em>
+            </div>
+          </label>
+          <label class="calc-addon">
+            <input type="checkbox" class="calc-addon-check" data-addon="tax" data-cost="125">
+            <div class="calc-addon-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <div>
+                <strong>Advanced Tax Strategies</strong>
+                <span>Year-round planning to minimize your tax burden</span>
+              </div>
+              <em class="addon-price">+$125/mo</em>
+            </div>
+          </label>
+          <label class="calc-addon">
+            <input type="checkbox" class="calc-addon-check" data-addon="projects" data-cost="75">
+            <div class="calc-addon-inner">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              <div>
+                <strong>Project &amp; Job Cost Tracking</strong>
+                <span>Profitability reporting by project or client</span>
+              </div>
+              <em class="addon-price">+$75/mo</em>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- ── Step 4: Books Status ── -->
+      <div class="calc-step">
+        <div class="calc-step-label">
+          <span class="calc-step-num">4</span>
+          What's the current state of your books?
+        </div>
+        <div class="calc-options calc-options--3" data-group="books">
+          <button class="calc-opt" data-value="clean" data-cleanup="0" data-cleanup-label="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span class="calc-opt-title">Up to date</span>
+            <span class="calc-opt-sub">Clean or starting fresh</span>
+          </button>
+          <button class="calc-opt" data-value="behind" data-cleanup="300" data-cleanup-label="Plus a one-time cleanup starting at $300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="calc-opt-title">A few months behind</span>
+            <span class="calc-opt-sub">Needs some catch-up work</span>
+          </button>
+          <button class="calc-opt" data-value="mess" data-cleanup="600" data-cleanup-label="Plus a one-time cleanup starting at $600">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span class="calc-opt-title">A year+ behind</span>
+            <span class="calc-opt-sub">Significant rebuild needed</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ── Result ── -->
+      <div class="calc-result" id="calcResult">
+        <div class="calc-result-idle" id="calcIdle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>Answer the questions above to see your estimate.</p>
+        </div>
+        <div class="calc-result-active" id="calcActive" style="display:none;">
+          <div class="calc-result-main">
+            <span class="calc-result-label">Starting from</span>
+            <span class="calc-result-price" id="calcPrice">$0<small>/mo</small></span>
+          </div>
+          <div class="calc-result-note" id="calcNote"></div>
+          <div class="calc-result-disclaimer">
+            This is a starting estimate based on typical engagements at your volume. Your actual quote may vary — we'll nail down the exact number in your free consultation.
+          </div>
+          <a href="contact.html" class="btn btn-primary calc-result-cta">
+            Get My Custom Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /calc-shell -->
+  </div>
+</section>
+
+<style>
+  /* ── Pricing Calculator ───────────────────────────────────────────── */
+  #pricing-calculator { background: var(--light); }
+
+  .calc-shell {
+    max-width: 860px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 36px;
+  }
+
+  /* Step wrapper */
+  .calc-step {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+  }
+  .calc-step-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 20px;
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  }
+  .calc-step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: 0.72rem; font-weight: 800;
+    flex-shrink: 0;
+  }
+  .calc-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem; font-weight: 400; color: var(--muted);
+    width: 100%;
+    padding-left: 38px;
+    margin-top: -12px;
+  }
+
+  /* Option cards grid */
+  .calc-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .calc-options--3 { grid-template-columns: repeat(3, 1fr); }
+
+  .calc-opt {
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    gap: 8px; padding: 18px 12px;
+    border: 2px solid var(--mid-gray);
+    border-radius: 10px; background: var(--white);
+    cursor: pointer; transition: all 0.2s ease;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .calc-opt svg { stroke: var(--muted); transition: stroke 0.2s; }
+  .calc-opt-title { font-size: 0.85rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
+  .calc-opt-sub { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--muted); line-height: 1.3; }
+
+  .calc-opt:hover {
+    border-color: var(--accent);
+    background: rgba(46,122,142,0.04);
+  }
+  .calc-opt:hover svg { stroke: var(--accent); }
+  .calc-opt.selected {
+    border-color: var(--accent);
+    background: rgba(46,122,142,0.06);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .calc-opt.selected svg { stroke: var(--accent); }
+  .calc-opt.selected .calc-opt-title { color: var(--accent); }
+
+  /* Add-on checkboxes */
+  .calc-addons { display: flex; flex-direction: column; gap: 10px; }
+  .calc-addon { cursor: pointer; }
+  .calc-addon input { display: none; }
+  .calc-addon-inner {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px 18px;
+    border: 2px solid var(--mid-gray);
+    border-radius: 10px; background: var(--white);
+    transition: all 0.2s ease;
+  }
+  .calc-addon-inner svg { stroke: var(--muted); flex-shrink: 0; transition: stroke 0.2s; }
+  .calc-addon-inner > div { flex: 1; }
+  .calc-addon-inner strong {
+    display: block;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.88rem; font-weight: 700; color: var(--navy);
+    margin-bottom: 2px;
+  }
+  .calc-addon-inner span {
+    font-size: 0.75rem; color: var(--muted);
+  }
+  .addon-price {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 700;
+    color: var(--muted); font-style: normal;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .calc-addon:hover .calc-addon-inner {
+    border-color: var(--accent);
+    background: rgba(46,122,142,0.04);
+  }
+  .calc-addon input:checked + .calc-addon-inner {
+    border-color: var(--accent);
+    background: rgba(46,122,142,0.06);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .calc-addon input:checked + .calc-addon-inner svg { stroke: var(--accent); }
+  .calc-addon input:checked + .calc-addon-inner strong { color: var(--accent); }
+  .calc-addon input:checked + .calc-addon-inner .addon-price { color: var(--accent); }
+
+  /* Result card */
+  .calc-result {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 2px solid var(--mid-gray);
+    transition: border-color 0.3s ease;
+  }
+  .calc-result.has-result { border-color: var(--accent); }
+
+  .calc-result-idle {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    color: var(--muted);
+  }
+  .calc-result-idle svg { stroke: var(--mid-gray); }
+  .calc-result-idle p { font-size: 0.9rem; }
+
+  .calc-result-main {
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: 10px;
+  }
+  .calc-result-label {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 6px;
+  }
+  .calc-result-price {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 3.2rem; font-weight: 800;
+    color: var(--navy); line-height: 1;
+  }
+  .calc-result-price small {
+    font-size: 1.1rem; font-weight: 600; color: var(--muted);
+  }
+  .calc-result-note {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    color: var(--gold); margin: 8px 0 16px;
+    min-height: 22px;
+  }
+  .calc-result-disclaimer {
+    font-size: 0.75rem; color: var(--muted);
+    max-width: 480px; margin: 0 auto 24px;
+    line-height: 1.6;
+  }
+  .calc-result-cta { margin: 0 auto; }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .calc-step { padding: 20px; }
+    .calc-options { grid-template-columns: repeat(2, 1fr); }
+    .calc-options--3 { grid-template-columns: repeat(1, 1fr); }
+    .calc-result { padding: 24px 20px; }
+    .calc-result-price { font-size: 2.4rem; }
+  }
+  @media (max-width: 480px) {
+    .calc-options { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<script>
+  /* ── Pricing Calculator Logic ────────────────────────────────────────
+     PLACEHOLDER PRICES — update these values to match your actual rates.
+     All prices are in USD. ────────────────────────────────────────── */
+
+  // Base monthly price by business type (set in data-base on each button)
+  // Sole Proprietor: $175 | LLC: $225 | S-Corp/C-Corp: $325 | Partnership: $275
+
+  // Transaction volume add-on (set in data-vol on each button)
+  // Under 50: +$0 | 50-150: +$100 | 150-300: +$200 | 300+: +$325
+
+  // Service add-ons (set in data-cost on each checkbox)
+  // Payroll: +$85/mo | Tax Strategies: +$125/mo | Project Tracking: +$75/mo
+
+  // One-time cleanup (set in data-cleanup on each books-status button)
+  // Clean: $0 | Few months behind: $300 | Year+ behind: $600
+
+  (function() {
+    const state = { base: null, vol: null, addons: 0, cleanupLabel: '' };
+
+    function recalc() {
+      if (state.base === null || state.vol === null) return;
+
+      const monthly = state.base + state.vol + state.addons;
+      const priceEl = document.getElementById('calcPrice');
+      const noteEl  = document.getElementById('calcNote');
+      const idle    = document.getElementById('calcIdle');
+      const active  = document.getElementById('calcActive');
+      const result  = document.getElementById('calcResult');
+
+      priceEl.innerHTML = '$' + monthly.toLocaleString() + '<small>/mo</small>';
+      noteEl.textContent = state.cleanupLabel || '';
+      idle.style.display   = 'none';
+      active.style.display = 'block';
+      result.classList.add('has-result');
+    }
+
+    // Single-select option groups
+    document.querySelectorAll('.calc-options').forEach(function(group) {
+      group.querySelectorAll('.calc-opt').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          group.querySelectorAll('.calc-opt').forEach(function(b) { b.classList.remove('selected'); });
+          btn.classList.add('selected');
+
+          const g = group.dataset.group;
+          if (g === 'biztype') state.base = parseInt(btn.dataset.base, 10);
+          if (g === 'volume')  state.vol  = parseInt(btn.dataset.vol, 10);
+          if (g === 'books') {
+            state.cleanupLabel = btn.dataset.cleanupLabel || '';
+          }
+          recalc();
+        });
+      });
+    });
+
+    // Addon checkboxes
+    document.querySelectorAll('.calc-addon-check').forEach(function(cb) {
+      cb.addEventListener('change', function() {
+        state.addons = 0;
+        document.querySelectorAll('.calc-addon-check:checked').forEach(function(c) {
+          state.addons += parseInt(c.dataset.cost, 10);
+        });
+        recalc();
+      });
+    });
+  })();
+</script>
+
 <!-- ── CTA ── -->
 <section id="services-cta">
   <div class="container">
