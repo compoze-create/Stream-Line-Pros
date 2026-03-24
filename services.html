@@ -159,9 +159,24 @@
     .service-visual::before {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse at 70% 30%, rgba(46,122,142,0.3) 0%, transparent 60%);
+      z-index: 1;
     }
     .service-visual-icon {
-      color: var(--gold); opacity: 0.25; position: relative; z-index: 1;
+      color: var(--gold); opacity: 0.25; position: relative; z-index: 2;
+    }
+    /* Photo-backed service visuals */
+    .service-visual.has-photo {
+      background: var(--navy);
+    }
+    .service-visual.has-photo::before {
+      background: linear-gradient(160deg, rgba(27,45,66,0.55) 0%, rgba(27,45,66,0.30) 100%);
+      z-index: 1;
+    }
+    .service-visual-photo {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      z-index: 0; border-radius: 16px;
     }
     .service-content .section-label { color: var(--gold); }
     .service-content h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 16px; }
@@ -395,10 +410,10 @@
 <section id="new-business" class="service-section reveal">
   <div class="container">
     <div class="service-layout">
-      <div class="service-visual">
-        <div class="service-visual-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-        </div>
+      <div class="service-visual has-photo">
+        <img src="site-assets/industry-photos/Consulting-2-Industries-1400x788.png"
+             alt="Two professionals reviewing financial plans together"
+             class="service-visual-photo" />
       </div>
       <div class="service-content">
         <span class="section-label">Service 01</span>
@@ -441,10 +456,11 @@
 <section id="rebuilds" class="service-section reveal">
   <div class="container">
     <div class="service-layout flip">
-      <div class="service-visual">
-        <div class="service-visual-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 .49-3"></path></svg>
-        </div>
+      <div class="service-visual has-photo">
+        <img src="site-assets/photos/SL-Pros_Page-Images.png"
+             alt="Overwhelmed business owner buried in disorganized paperwork"
+             class="service-visual-photo"
+             style="object-position: center 30%;" />
       </div>
       <div class="service-content">
         <span class="section-label">Service 02</span>
@@ -625,10 +641,10 @@
 <section id="tax" class="service-section reveal">
   <div class="container">
     <div class="service-layout flip">
-      <div class="service-visual">
-        <div class="service-visual-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-        </div>
+      <div class="service-visual has-photo">
+        <img src="site-assets/industry-photos/Financial-2-Industries-1400x788.png"
+             alt="Stacked coins with growing plants — financial growth through smart strategy"
+             class="service-visual-photo" />
       </div>
       <div class="service-content">
         <span class="section-label">Service 06</span>

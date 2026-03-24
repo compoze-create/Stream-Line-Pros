@@ -80,8 +80,8 @@
     .top-bar .social-link { display: inline-flex; align-items: center; gap: 4px; margin: 0 8px; }
 
     /* ── Page Hero ── */
-    .page-hero { background: linear-gradient(135deg, var(--navy) 0%, #0f1f30 100%); position: relative; overflow: hidden; padding: 80px 0 72px; }
-    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(60,96,127,0.35) 0%, transparent 65%); }
+    .page-hero { background: var(--navy) no-repeat center center / cover; position: relative; overflow: hidden; padding: 80px 0 72px; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(11,23,38,0.82) 0%, rgba(27,45,66,0.72) 100%); z-index: 0; }
     .hero-grid-lines { position: absolute; inset: 0; pointer-events: none; opacity: 0.03; background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 60px 60px; }
     .page-hero-inner { position: relative; z-index: 1; text-align: center; }
     .page-hero h1 { color: var(--white); margin-bottom: 16px; font-weight: 800; }
@@ -159,6 +159,9 @@
     /* ── Client Logos ── */
     #client-logos { background: var(--white); padding: 72px 0; }
     .clients-label { text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 32px; }
+    .logo-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px 56px; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--mid-gray); }
+    .logo-row img { height: 44px; width: auto; max-width: 180px; object-fit: contain; filter: grayscale(100%) opacity(0.55); transition: filter 0.25s; }
+    .logo-row img:hover { filter: grayscale(0%) opacity(1); }
     .clients-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .client-pill { padding: 7px 16px; border: 1px solid var(--mid-gray); border-radius: 100px; font-size: 0.80rem; font-weight: 500; color: var(--muted); background: var(--light); transition: all 0.2s; }
     .client-pill:hover { border-color: var(--navy); color: var(--navy); background: var(--white); }
@@ -253,7 +256,7 @@
 </header>
 
 <!-- ── Page Hero ── -->
-<section class="page-hero">
+<section class="page-hero" style="background-image: url('site-assets/photos/nastuh-abootalebi-eHD8Y1Znfpk-unsplash.jpg');">
   <div class="hero-grid-lines"></div>
   <div class="container">
     <div class="page-hero-inner">
@@ -462,6 +465,11 @@
 <div id="client-logos">
   <div class="container">
     <p class="clients-label">Businesses we've served</p>
+    <div class="logo-row">
+      <img src="site-assets/client-logos/Riverside_Remodeling_hort_color-1400x430.png" alt="Riverside Remodeling" />
+      <img src="site-assets/client-logos/Hillhouse-Logo.png" alt="Hillhouse, LLC" />
+      <img src="site-assets/client-logos/Daves-RVs-Black-Transparent-01-1200x800.png" alt="Dave's RVs" />
+    </div>
     <div class="clients-list">
       <span class="client-pill">Rhythm Builders, LLC</span>
       <span class="client-pill">LMJ Studio LLC</span>
