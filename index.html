@@ -640,6 +640,10 @@
       .testimonial-card { padding: 28px 24px; }
       .about-pillars { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
+      .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    }
+    @media (max-width: 480px) {
+      .top-bar-label { display: none; }
     }
   </style>
 </head>
@@ -647,7 +651,7 @@
 
 <!-- ── Top Bar ──────────────────────────────────────────────────── -->
 <div class="top-bar">
-  Bookkeeping Solutions &nbsp;|&nbsp;
+  <span class="top-bar-label">Bookkeeping Solutions &nbsp;|&nbsp;</span>
   <a href="tel:6162925254">(616) 292-5254</a>
   &nbsp;|&nbsp;
   <a class="social-link" href="https://www.linkedin.com/company/streamline-pros" target="_blank" rel="noopener">LinkedIn</a>
